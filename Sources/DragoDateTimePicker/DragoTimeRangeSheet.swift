@@ -60,8 +60,8 @@ public final class DragoTimeRangeSheet: UIView {
     // MARK: - Build
 
     private func buildUI() {
-        startTimes = TimeListBuilder.build(from: 0, format: config.timeFormat)
-        endTimes   = TimeListBuilder.build(from: 1, format: config.timeFormat)
+        startTimes = TimeListBuilder.build(from: 0, format: config.timeFormat, interval: config.timeInterval)
+        endTimes   = TimeListBuilder.build(from: 1, format: config.timeFormat, interval: config.timeInterval)
 
         buildOverlay()
         buildCard()
@@ -277,10 +277,11 @@ public final class DragoTimeRangeSheet: UIView {
     // MARK: - Actions
 
     @objc private func doneTapped() {
-        let s = startPicker.selectedRow(inComponent: 0)
-        let e = endPicker.selectedRow(inComponent: 0)
+        let s     = startPicker.selectedRow(inComponent: 0)
+        let e     = endPicker.selectedRow(inComponent: 0)
         let start = startTimes.indices.contains(s) ? startTimes[s] : startTimes.first ?? ""
         let end   = endTimes.indices.contains(e)   ? endTimes[e]   : endTimes.first  ?? ""
+        guard start != end else { return }
         delegate?.timeRangeSheet(self, didSelect: start, end: end)
     }
 
@@ -305,7 +306,7 @@ extension DragoTimeRangeSheet: UIPickerViewDataSource, UIPickerViewDelegate {
 
     public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let times      = pickerView.tag == 0 ? startTimes : endTimes
-        let label      = (view as? UILabel) ?? UILabel()
+        let label      = UILabel()
         let isSelected = row == pickerView.selectedRow(inComponent: 0)
 
         label.text          = times[row]
@@ -322,9 +323,12 @@ extension DragoTimeRangeSheet: UIPickerViewDataSource, UIPickerViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerView.reloadComponent(0)
         guard pickerView.tag == 0 else { return }
-        let next = TimeListBuilder.build(from: row + 1, format: config.timeFormat)
-        endTimes = next.isEmpty ? [startTimes[row]] : next
+        let next = TimeListBuilder.build(from: row + 1, format: config.timeFormat, interval: config.timeInterval)
+        endTimes = next
         endPicker.reloadComponent(0)
         endPicker.selectRow(0, inComponent: 0, animated: true)
+        // Disable Done when no valid end time exists (last slot selected)
+        doneButton.isEnabled = !next.isEmpty
+        doneButton.alpha     = next.isEmpty ? 0.4 : 1.0
     }
 }

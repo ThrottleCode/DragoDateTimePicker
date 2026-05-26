@@ -77,21 +77,26 @@ public final class DragoPickerView: UIView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.textAlignment = .center
         card.addSubview(titleLabel)
+        let topPad: CGFloat = config.title != nil ? 20 : 0
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: card.topAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: card.topAnchor, constant: topPad),
             titleLabel.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: card.trailingAnchor, constant: -16)
         ])
+        if config.title == nil {
+            titleLabel.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        }
     }
 
     private func buildTitleDivider() {
         titleDivider.translatesAutoresizingMaskIntoConstraints = false
         card.addSubview(titleDivider)
+        let topPad: CGFloat = config.title != nil ? 12 : 0
         NSLayoutConstraint.activate([
-            titleDivider.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
+            titleDivider.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: topPad),
             titleDivider.leadingAnchor.constraint(equalTo: card.leadingAnchor),
             titleDivider.trailingAnchor.constraint(equalTo: card.trailingAnchor),
-            titleDivider.heightAnchor.constraint(equalToConstant: 0.5)
+            titleDivider.heightAnchor.constraint(equalToConstant: config.title != nil ? 0.5 : 0)
         ])
     }
 
@@ -99,13 +104,21 @@ public final class DragoPickerView: UIView {
         let dp = UIDatePicker()
         dp.translatesAutoresizingMaskIntoConstraints = false
         switch config.mode {
-        case .singleTime: dp.datePickerMode = .time
-        case .date:       dp.datePickerMode = .date
-        default:          dp.datePickerMode = .dateAndTime
+        case .singleTime:
+            dp.datePickerMode = .time
+            // Honour timeFormat the same way .time mode does
+            dp.locale = config.timeFormat == .hour12
+                ? Locale(identifier: "en_US_POSIX")
+                : Locale(identifier: "en_GB")
+        case .date:
+            dp.datePickerMode = .date
+            dp.locale = config.locale
+        default:
+            dp.datePickerMode = .dateAndTime
+            dp.locale = config.locale
         }
         dp.minimumDate = config.minimumDate
         dp.maximumDate = config.maximumDate
-        dp.locale      = config.locale
         if #available(iOS 13.4, *) { dp.preferredDatePickerStyle = .wheels }
         card.addSubview(dp)
         NSLayoutConstraint.activate([

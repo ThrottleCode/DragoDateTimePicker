@@ -59,9 +59,12 @@ public struct DragoPickerConfig {
     public var titleColor: UIColor = .label
 
     // MARK: Date picker
-    public var minimumDate: Date?
-    public var maximumDate: Date?
-    public var locale:      Locale = .current
+    public var minimumDate:   Date?
+    public var maximumDate:   Date?
+    public var locale:        Locale = .current
+
+    // MARK: Time interval (minutes) — .time / .singleTime modes
+    public var timeInterval: Int = 30
 
     public init() {}
 }

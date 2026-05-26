@@ -5,19 +5,21 @@ import Foundation
 
 enum TimeListBuilder {
 
-    /// All 30-min slots for the given format (48 entries).
-    static func allSlots(format: DragoTimeFormat) -> [String] {
-        (0 ..< 48).map { i in
-            let hour   = (i / 2)
-            let minute = (i % 2) * 30
+    /// All slots for the given format and interval (in minutes).
+    static func allSlots(format: DragoTimeFormat, interval: Int = 30) -> [String] {
+        let count = (24 * 60) / interval
+        return (0 ..< count).map { i in
+            let totalMinutes = i * interval
+            let hour   = totalMinutes / 60
+            let minute = totalMinutes % 60
             return format == .hour24 ? slot24(hour: hour, minute: minute)
                                      : slot12(hour: hour, minute: minute)
         }
     }
 
     /// Slots starting at `index`. Returns empty array if index is out of range.
-    static func build(from index: Int, format: DragoTimeFormat) -> [String] {
-        let all = allSlots(format: format)
+    static func build(from index: Int, format: DragoTimeFormat, interval: Int = 30) -> [String] {
+        let all = allSlots(format: format, interval: interval)
         guard index < all.count else { return [] }
         return Array(all[index...])
     }

@@ -1,0 +1,251 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		586AF2D4E5BD47F4A5BB7A77 /* DragoDateTimePicker in Frameworks */ = {isa = PBXBuildFile; productRef = B9905EA1E54042B19A102013 /* DragoDateTimePicker */; };
+		CBFFDB70F41F487987B1D843 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727A1DF55C5443DEA726AD64 /* ExampleViewController.swift */; };
+		CE586B1EAC9745E6AAC9961A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C03D3538CA4315B0B58D45 /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5E3B4ED138174E4191526374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		727A1DF55C5443DEA726AD64 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		AA54513ACC4B4543AA5035FE /* DragoExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragoExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9C03D3538CA4315B0B58D45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E44315D4091495A815D9D95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586AF2D4E5BD47F4A5BB7A77 /* DragoDateTimePicker in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F1F0C1CD9534234BCD73644 = {
+			isa = PBXGroup;
+			children = (
+				D5AEA3BE66034C05A4785000 /* DragoExample */,
+				2D8932A2581A459EB72A1BEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2D8932A2581A459EB72A1BEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA54513ACC4B4543AA5035FE /* DragoExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5AEA3BE66034C05A4785000 /* DragoExample */ = {
+			isa = PBXGroup;
+			children = (
+				C9C03D3538CA4315B0B58D45 /* AppDelegate.swift */,
+				727A1DF55C5443DEA726AD64 /* ExampleViewController.swift */,
+				5E3B4ED138174E4191526374 /* Info.plist */,
+			);
+			path = DragoExample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA54513ACC4B4543AA5035FE_TARGET /* DragoExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCFG001 /* Build configuration list for PBXNativeTarget "DragoExample" */;
+			buildPhases = (
+				BSRC001 /* Sources */,
+				7E44315D4091495A815D9D95 /* Frameworks */,
+				BRES001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DragoExample;
+			packageProductDependencies = (
+				B9905EA1E54042B19A102013 /* DragoDateTimePicker */,
+			);
+			productName = DragoExample;
+			productReference = AA54513ACC4B4543AA5035FE /* DragoExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PROJ001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AA54513ACC4B4543AA5035FE_TARGET = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = BCFG000 /* Build configuration list for PBXProject "DragoExample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F1F0C1CD9534234BCD73644;
+			packageReferences = (
+				PKGREF001 /* XCLocalSwiftPackageReference "../" */,
+			);
+			productRefGroup = 2D8932A2581A459EB72A1BEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA54513ACC4B4543AA5035FE_TARGET /* DragoExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BRES001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BSRC001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE586B1EAC9745E6AAC9961A /* AppDelegate.swift in Sources */,
+				CBFFDB70F41F487987B1D843 /* ExampleViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BCFG000_DEBUG /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		BCFG000_RELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		BCFG001_DEBUG /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PW9UA3XB62;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DragoExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.valuescan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCFG001_RELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PW9UA3XB62;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DragoExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.valuescan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCFG000 /* Build configuration list for PBXProject "DragoExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCFG000_DEBUG /* Debug */,
+				BCFG000_RELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCFG001 /* Build configuration list for PBXNativeTarget "DragoExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCFG001_DEBUG /* Debug */,
+				BCFG001_RELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		PKGREF001 /* XCLocalSwiftPackageReference "../" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B9905EA1E54042B19A102013 /* DragoDateTimePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = PKGREF001 /* XCLocalSwiftPackageReference "../" */;
+			productName = DragoDateTimePicker;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = PROJ001 /* Project object */;
+}

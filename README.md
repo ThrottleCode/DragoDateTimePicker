@@ -54,10 +54,11 @@ dependencies: [
 import DragoDateTimePicker
 
 var config = DragoPickerConfig()
-config.mode       = .time
-config.timeFormat = .hour12          // or .hour24
-config.title      = "Set Start & End Time"
-config.okColor    = .systemBlue
+config.mode        = .time
+config.timeFormat  = .hour12          // or .hour24
+config.timeInterval = 30              // 15, 30, or 60 minutes
+config.title       = "Set Start & End Time"
+config.okColor     = .systemBlue
 
 let picker = DragoPickerController()
 picker.config = config
@@ -78,8 +79,9 @@ present(picker, animated: true)
 
 ```swift
 var config = DragoPickerConfig()
-config.mode  = .singleTime
-config.title = "Select Time"
+config.mode       = .singleTime
+config.timeFormat = .hour12
+config.title      = "Select Time"
 
 let picker = DragoPickerController()
 picker.config = config
@@ -171,8 +173,9 @@ config.minimumDate = Date()
 config.maximumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
 config.locale      = .current
 
-// Time format (.time mode only)
-config.timeFormat = .hour12   // or .hour24
+// Time format (.time / .singleTime modes)
+config.timeFormat   = .hour12   // or .hour24
+config.timeInterval = 30        // slot interval in minutes (e.g. 15, 30, 60)
 ```
 
 ---
@@ -189,26 +192,16 @@ picker.onConfirm = { result in
 
 ---
 
-## Publish to GitHub
+## Example App
 
-```bash
-cd /Users/mac2/Desktop/DragoDateTimePickerPackage
-git init
-git add .
-git commit -m "Initial release"
-git remote add origin https://github.com/ThrottleCode/DragoDateTimePicker.git
-git push -u origin main
-```
+An example Xcode project is included in the `Example/` folder.
 
-Then tag a release:
-
-```bash
-git tag 1.0.0
-git push origin 1.0.0
-```
+1. Open `Example/DragoExample.xcodeproj` in Xcode
+2. Select any iPhone simulator
+3. Hit Run ▶
 
 ---
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE)
