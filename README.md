@@ -19,6 +19,20 @@ Supports **Start/End time range**, **single time**, **date**, and **date + time*
 
 ## Installation
 
+### CocoaPods
+
+Add to your `Podfile`:
+
+```ruby
+pod 'DragoDateTimePicker'
+```
+
+Then run:
+
+```bash
+pod install
+```
+
 ### Swift Package Manager
 
 In Xcode → **File → Add Package Dependencies**, paste:
