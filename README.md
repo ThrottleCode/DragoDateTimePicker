@@ -3,6 +3,8 @@
 A clean, modern, fully programmatic iOS date & time picker library written in Swift.  
 Supports **Start/End time range**, **single time**, **date**, and **date + time** modes.
 
+![Preview](Assets/preview.png)
+
 ---
 
 ## Requirements
